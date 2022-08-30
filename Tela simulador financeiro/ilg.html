@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.Css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="area">
+
+        <input id="qtdsensor" class="insertvalues" placeholder="QTD.SENSORES" type="text">
+        <div id="obg1" class="diverror"></div>
+        <input id="m2" class="insertvalues" placeholder="M²" type="text">
+        <div id="obg2" class="diverror"></div>
+        <div class="insertvalues" class="fixed">
+            <p>
+                R$ 2.300.00
+            </p>
+        </div>
+        <div class="valorfixo">
+            <p>custo manutenção</p>
+        </div>
+        <button class="check" onclick="calc()"> Simular </button>
+
+        <div id="arearesult" class="result"></div>
+
+
+    </div>
+
+    
+</body>
+</html>
+
+<script>
+    function calc(){
+        var qtdsensores = Number(qtdsensor.value)
+        var metroquadrado = Number(m2.value)
+        var valormanutenção = 2300
+
+        if (metroquadrado  == '') {
+            obg2.innerHTML = '* CAMPO OBRIGATÓRIO'
+
+        }
+
+        if (qtdsensores  == '') {
+            obg1.innerHTML = '* CAMPO OBRIGATÓRIO'
+
+        }else{
+            var total = (qtdsensores * metroquadrado) + valormanutenção
+            arearesult.innerHTML = `O custo será de R$${total} reais`
+        }
+    }
+</script>
