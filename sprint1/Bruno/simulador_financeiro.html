@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2 class="titulo">Olá, somos a X <i> corporation </i></h2><br><br>
+    <p>Somos umas empresa que monitora temperaturas e umidade em armazens de Soja</p>
+    <p>Com o monitoramento constante, é possível diminuir as perdas e, portanto, aumentar o seu lucro</p>
+    <p>Quer fazer uma simulação do quanto a sua safra pode aumentar? Insiras as informações nos espaços a seguir:</p><br>
+
+    <p>Digite quantas toneladas é a sua produção anual:</p>
+    <input type="text" id="ipt_safra"><br>
+
+    <p>Digite uma temperatura hipotética de até 60C:</p>
+    <input type="text" id="ipt_temperatura"><br>
+
+    <p>Digite uma umidade hipotética de até 100%:</p>
+    <input type="text" id="ipt_umidade"><br>
+    <button onclick="calcular()">Simular</button><br><br>
+
+
+    <div id="div_resultado" class="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function calcular(){
+        var safra = Number(ipt_safra.value);
+        var temp = Number(ipt_temperatura.value);
+        var umidade = Number(ipt_umidade.value);
+
+        if (temp < 5 || temp > 59){ 
+            if (umidade > 70){ //caso a temperatura e a umidade estejam favoraveis para a proliferação de bacterias
+                var calculo_perda = safra * 0.8;
+                var calculo_diferenca = safra * 0.16;
+                div_resultado.innerHTML = `Pelo nossos calculos, você está <strong>perdendo 16%</strong> da sua safra por <strong>conta da Temperatura e Umidade</strong>. Como resultado, a sua <strong>safra final é de ${calculo_perda} toneladas</strong>.`
+                div_resultado.innerHTML += `<br> Com os nossos serviços, você perderia um <strong>máximo de 5%</strong>. Resultando em um <strong>aumento de ${calculo_diferenca} toneladas</strong>.`
+
+            } else { //caso a temperatura esteja favoravel para a proliferação de bacterias
+                var calculo_perda = safra * 0.88;
+                var calculo_diferenca = safra * 0.16;
+                div_resultado.innerHTML = `Pelo nossos calculos, você está <strong>perdendo 8%</strong> da sua safra por <strong>conta da Temperatura</strong>. Como resultado, a sua <strong>safra final é de ${calculo_perda} toneladas</strong>.`
+                div_resultado.innerHTML += `<br> Com os nossos serviços, você perderia um <strong>máximo de 5%</strong>. Resultando em um <strong>aumento de ${calculo_diferenca} toneladas</strong>.`
+            }
+        } else if (umidade > 70) { //caso a umidade esteja favoravel para a proliferação de bascterias
+            var calculo_perda = safra * 0.88;
+                var calculo_diferenca = safra * 0.16;
+                div_resultado.innerHTML = `Pelo nossos calculos, você está <strong>perdendo 8%</strong> da sua safra por <strong>conta da Umidade</strong>. Como resultado, a sua <strong>safra final é de ${calculo_perda} toneladas</strong>.`
+                div_resultado.innerHTML += `<br> Com os nossos serviços, você perderia um <strong>máximo de 5%</strong>. Resultando em um <strong>aumento de ${calculo_diferenca} toneladas</strong>.`
+        }
+    }
+</script>
