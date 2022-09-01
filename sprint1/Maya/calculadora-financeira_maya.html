@@ -8,8 +8,8 @@
 </head>
 <body>
     <h2>Calculadora Financeira de Perdas/Ganhos</h2>
-    Insira a quantidade de hectares que há em sua fazenda: <input type="text" id="in_hectare"> <br>
     Insira o ano da safra (Ex: 2014): <input type="text" id="in_ano"><br>
+    Insira quantas toneladas foram produzidos nesse ano: <input type="text" id="in_quilos"> <br>
     <button onclick="calcular()">Calcular perdas</button>
 
     <div id="output"></div>
@@ -17,9 +17,9 @@
 </html>
 <script>
     function calcular() {
-        var hectare = Number(in_hectare.value);
+        var quilos = Number(in_quilos.value);
         var ano = Number(in_ano.value);
-        var ganhos = hectare * 360;
+        var ganhos = quilos * (1.54 * 1000);
         var safra2014 = 6.62;
         var safra2015 = 5.44;
         var safra2016 = 3.68;
