@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Perdas</title>
+</head>
+<body>
+    <h1>Simulador de perdas de Soja</h1>
+    Insira quantos quilos de soja você quer estimar a parda por vias de armazenamento: <input type="text" id="inArmaz"> <br>
+    Ao clicar em verificar serão feitas as simulações de acordo com a tabela! <br>
+    <figure>
+        <img src="Gráfico.png" alt="Tabela">
+        <figcaption>Adaptado de (Lorini,Irineu 2018)</figcaption>
+      </figure>
+    <button onclick="estimar()">Verificar!</button>
+    <div id="mostraPerda"></div>
+</body>
+</html>
+<script>
+    function estimar(){
+        var sojArmz = Number(inArmaz.value)*1.54
+        var perdamedia= sojArmz*0.0368
+        var Brasil3=sojArmz-perdamedia
+        mostraPerda.innerHTML = `Com faturamento aproximado de R$${sojArmz} é perdido aproxi- <br>
+        madamente R$${perdamedia}, tendo apenas R$${Brasil3} como <br>
+        ganhos totais considerando a média nacional!`
+    }
+</script>
