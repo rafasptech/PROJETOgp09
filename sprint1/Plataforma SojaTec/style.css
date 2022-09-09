@@ -1,0 +1,142 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    height: 1000px;
+    width: 100%;
+    
+}
+
+.header{
+height: 50px;
+width: 100vw;
+background-color: #76D28F;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0px 0px;
+box-shadow: 0px 5px 26px 3px black;
+}
+
+.navbar{
+    height: 100%;
+    width: 40%;
+}
+
+.navbar ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: whitesmoke;
+}
+
+.img{
+    height: 500px;
+    width: 100vw;
+    background-image: url(assets/Green_tea_plantation-Scenery_HD_desktop_wallpaper_1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.areabutton{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button{
+    height: 30px;
+    border-radius: 50px;
+    border: none;
+}
+
+.btsm{
+    background-color: #76D28F;
+    width: 100px;
+    color: whitesmoke;
+}
+.btne{
+    width: 140px;
+    color: #76D28F;
+}
+
+.main{
+    background-color: white;
+    height: 500px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.points{
+    height: 400px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.points img{
+    height: 150px;
+    width: 150px;
+}
+
+.titulospoints{
+    color: #76D28F ;
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    height: 70px;
+width: 100vw;
+background-color: #76D28F;
+display: flex;
+justify-content: end;
+
+}
+
+.areacontatos{
+    width: 400px;
+    height: 100%;
+    display: flex;
+}
+
+.ulcontatos{
+    height: 100%;
+    width: 250px;
+    list-style: none;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.ulitemcontatos{
+    height: 100%;
+    width: 200px;
+    list-style: none;
+}
